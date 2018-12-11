@@ -1,0 +1,5 @@
+﻿  Source.cpp
+Source.cpp(99): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+Source.cpp(197): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Проект2.vcxproj -> C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\Проект2\x64\Debug\Проект2.exe
+  Проект2.vcxproj -> C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\Проект2\x64\Debug\Проект2.pdb (Full PDB)

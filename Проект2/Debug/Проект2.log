@@ -1,0 +1,5 @@
+﻿  Source.cpp
+Source.cpp(8): warning C4018: <=: несоответствие типов со знаком и без знака
+Source.cpp(39): warning C4018: <=: несоответствие типов со знаком и без знака
+  Проект2.vcxproj -> c:\users\alexandra\documents\visual studio 2015\Projects\Проект2\Debug\Проект2.exe
+  Проект2.vcxproj -> c:\users\alexandra\documents\visual studio 2015\Projects\Проект2\Debug\Проект2.pdb (Full PDB)
