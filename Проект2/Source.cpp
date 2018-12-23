@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <map> 
 using namespace std;
 
 void numsub(string subs, string subf, int &num) {
@@ -388,10 +390,6 @@ void expend(string* peptides, int &numofpept) {
 	int i, j, size;
 	size = numofpept;
 
-/*	cout << "\nBeforeExpend:\n";
-	for (i = 0; i < numofpept; i++)
-		cout << peptides[i] << ' ';*/
-
 	for (i = 0; i < size; i++) 
 		for (j = 1; j <= 18; j++) 
 			peptides[numofpept++] = peptides[i] + alfaminum(j);		
@@ -400,8 +398,6 @@ void expend(string* peptides, int &numofpept) {
 		peptides[i] = peptides[i + size];
 
 	numofpept -= size;
-
-
 }
 
 void answerSequencing(string peptides) {
@@ -502,7 +498,6 @@ void Tream(string* leadbord, int &numofpept, int* Spectrum, int s_S, int N) {
 			if (scorpepts[i] == max_scor) {
 				tmp[in++] = leadbord[i];
 			}
-//	for (in; in<N; i++)
 
 		for (j = size_wr - 2; j >= 0; j++)
 			for (i = 0; i < numofpept, in<N; i++)
@@ -575,7 +570,47 @@ string putmistakes(string pat, int d, int i, int l) {
 	}
 
 }
+//13
+vector<string> abc{ "A", "C", "G", "T" };
+void gen(const vector<string> &alf, string s, size_t n, string* mas, int &mcount) {
+	for (size_t i = 0; i < alf.size(); ++i) {
+		if (n > 1) 
+			gen(alf, s + alf[i], n - 1,mas,mcount);
+		else 
+			mas[mcount++] = s + alf[i];
+	}
+}
 
+int HammingDist(string pat, string subpat)
+{
+	int count = 0;
+	int length = pat.length();
+
+	for (int i = 0; i < length; i++){
+		if (pat[i] != subpat[i])
+			count++;
+	}
+	return count;
+}
+
+int Dpat_text(string pat, string dnai, int k) {
+	int l = dnai.length();
+	int d = k, tmpd;
+
+	for (int i = 0; i < l - k + 1; i++) {
+		tmpd = HammingDist(pat, dnai.substr(i, k));
+		if (tmpd < d)
+			d = tmpd;
+	}
+	return d;
+}
+
+int Dpat_dna(string pat, string* dna, int k) {
+	int sum = 0;
+	for (int i = 0; i < 10; i++) 
+		sum += Dpat_text(pat, dna[i], k);
+	return sum;
+}
 string* delrepit(string str, int k, int &size) {
 	string strk, strk2, strpat, strres="", *resmas;
 	int i, j, flag, massize = 0;
@@ -808,7 +843,28 @@ int main() {
 			for (i = 0; i < size; i++)
 				cout << masami[i] << " ";
 		}
+		if (task == 8) {
 
+			int aminoacid_masses[18] = { 57, 71, 87, 97, 99, 101, 103, 113, 114, 115, 128, 129, 131, 137, 147, 156, 163, 186 };
+
+			map<int, int64_t> res = { { 0,1 } };
+			int input;
+			cin >> input;
+
+			for (int i = 57; i <= input; i++)
+			{
+				res[i] = 0;
+
+				for (int j = 0; j < 18; j++)
+				{
+					if (res.find(i - aminoacid_masses[j]) != res.end())
+					{
+						res[i] += res[i - aminoacid_masses[j]];
+					}
+				}
+			}
+			cout << res[input];
+		}
 		if (task == 9) {
 			string str1, *strvarians, strresultpepts = "";
 			int *spectr;
@@ -992,6 +1048,28 @@ int main() {
 			for (i = 0; i < rmsize; i++)
 				cout << resmas[i] << " ";
 
+		}
+		if (task == 13) {
+			int i, distanse = 1000, tmpd;
+			int k, mascount = 0;
+			string *mass, s, *dna, median;
+
+			cin >> k;
+			dna = new string[10];
+			for (i = 0; i < 10; i++)
+				cin >> dna[i];
+
+			mass = new string[pow(4, k)];
+			gen(abc, s, k,mass,mascount);
+
+			for (i = 0; i < mascount; i++) {
+				tmpd = Dpat_dna(mass[i], dna, k);
+				if (distanse > tmpd) {
+					distanse = tmpd;
+					median = mass[i];
+				}
+			}
+			cout << median;
 
 		}
 
