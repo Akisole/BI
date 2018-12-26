@@ -1,0 +1,21 @@
+﻿  num9.cpp
+num9.cpp(38): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(189): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(204): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(229): warning C4101: size_wr: неиспользованная локальная переменная
+num9.cpp(230): warning C4101: scorsort_wrepit: неиспользованная локальная переменная
+num9.cpp(323): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(327): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(343): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(449): warning C4101: k: неиспользованная локальная переменная
+num9.cpp(499): warning C4101: p: неиспользованная локальная переменная
+num9.cpp(571): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+num9.cpp(615): warning C4244: =: преобразование "double" в "int", возможна потеря данных
+num9.cpp(719): warning C4244: =: преобразование "double" в "long", возможна потеря данных
+num9.cpp(607): warning C4101: size_outpept: неиспользованная локальная переменная
+c:\users\alexandra\documents\visual studio 2015\projects\проект2\num9\num9.cpp(456): warning C4700: использована неинициализированная локальная переменная "a"
+c:\users\alexandra\documents\visual studio 2015\projects\проект2\num9\num9.cpp(109): warning C4715: alfamin: значение возвращается не при всех путях выполнения
+c:\users\alexandra\documents\visual studio 2015\projects\проект2\num9\num9.cpp(117): warning C4715: alfaminum: значение возвращается не при всех путях выполнения
+c:\users\alexandra\documents\visual studio 2015\projects\проект2\num9\num9.cpp(734): warning C4700: использована неинициализированная локальная переменная "b"
+  num9.vcxproj -> C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\Проект2\x64\Debug\num9.exe
+  num9.vcxproj -> C:\Users\Alexandra\Documents\Visual Studio 2015\Projects\Проект2\x64\Debug\num9.pdb (Full PDB)
